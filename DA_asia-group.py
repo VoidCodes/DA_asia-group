@@ -107,7 +107,4 @@ class Statistics:
     plt.show()
     
 
-    #test
-    print("hi")
-
     #str.includes(ans[x])
