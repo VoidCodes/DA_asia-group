@@ -108,5 +108,6 @@ class Statistics:
     
 
     #test
+    print("hi")
 
     #str.includes(ans[x])
