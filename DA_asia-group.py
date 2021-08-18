@@ -85,20 +85,26 @@ class Statistics:
 
     #print(countries)
     years = countries[countries.columns[0]]
+    #print(years)
+
+
 
     year = years.str.split(" ", n=1, expand=True)
+   # print(year)
 
+    countries = countries.assign(Year=year[0])
+    countries = countries.assign(Month=year[1])
+
+    yearstats = countries.groupby("Year").sum().reset_index()
+    print(yearstats)
     #print(years[years.str.contains("Jan")])
+    plt.pie(yearstats["Japan"])
 
-    print(year)
-    #plt.pie(countries[years], countries["Brunei Darussalam"])
-    """
     plt.title("")
-    plt.xlabel("Years")
-    plt.ylabel("Countries")
+
     plt.legend()
     plt.show()
-    """
+    
 
 
 
