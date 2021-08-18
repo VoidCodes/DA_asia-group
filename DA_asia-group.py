@@ -98,9 +98,10 @@ class Statistics:
     yearstats = countries.groupby("Year").sum().reset_index()
     print(yearstats)
     #print(years[years.str.contains("Jan")])
-    plt.pie(yearstats["Japan"])
+    plt.plot(yearstats["Japan"])
+    plt.xlabel("Year")
 
-    plt.title("")
+    plt.title("Stats")
 
     plt.legend()
     plt.show()
