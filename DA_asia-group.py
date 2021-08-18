@@ -72,8 +72,6 @@ class Statistics:
         years = self.countries[self.countries.columns[0]]
         #print(years)
 
-
-
         year = years.str.split(" ", n=1, expand=True)
         #print(year)
 
@@ -90,7 +88,16 @@ class Statistics:
 
         #plt.legend()
         plt.show()
+
+    def generateBarGraph(self):
+        yearStats = self.countries.groupby("Year").sum().reset_index()
+
+        plt.bar(yearStats["Year"], yearStats["Japan"])
+        plt.xlabel("Year")
+        plt.ylabel("Country")
+        plt.show()
     
 stats = Statistics()
 stats.generate_Top3()
 stats.generateLineChart()
+#stats.generateBarGraph()
