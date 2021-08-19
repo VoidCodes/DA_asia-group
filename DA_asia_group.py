@@ -13,7 +13,7 @@ class Statistics:
         AsiaPacific = countryRegion.iloc[:,lambda df:[0, 8, 9, 10, 11, 12]]
         AsiaPacific = AsiaPacific.set_index('Unnamed: 0')
         countryYear = AsiaPacific.loc['1978 Jan':'1987 Dec']
-        print (countryYear)
+        #print (countryYear)
 
         Sums = AsiaPacific.sum(axis=0)
         Sums = Sums.sort_values(ascending=False)
@@ -89,9 +89,24 @@ class Statistics:
 
         plt.show()
 
+    # Unit testing stuff
+    def getTopCountry(self):
+        countries = pd.read_excel(r"Project_File.xlsx")
+        countries = countries.iloc[:, lambda countries: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]]
+        countries = countries.replace("na", 0)
+        asia = countries.set_index("Unnamed: 0")
+        asia = asia.loc['1978 Jan':'1987 Dec']
+        sums = asia.sum(axis=0)
+        sums = sums.sort_values(ascending=False)
+        top1 = sums.index[0]
+        Sum1 = sums[top1]
+        print(Sum1)
+
+        return asia["Japan"].sum()
+
     
 
-stats = Statistics()
-stats.generate_Top3()
-stats.generate_linegraph()
-stats.generate_bargraph()
+#stats = Statistics()
+#stats.generate_Top3()
+#stats.generate_linegraph()
+#stats.generate_bargraph()
