@@ -104,9 +104,11 @@ class Statistics:
 
         return asia["Japan"].sum()
 
+        #I HATE THIS SHIT
+
     
 
-#stats = Statistics()
-#stats.generate_Top3()
-#stats.generate_linegraph()
-#stats.generate_bargraph()
+stats = Statistics()
+stats.generate_Top3()
+stats.generate_linegraph()
+stats.generate_bargraph()
