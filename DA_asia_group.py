@@ -14,6 +14,7 @@ class Statistics:
         AsiaPacific = AsiaPacific.set_index('Unnamed: 0')
         countryYear = AsiaPacific.loc['1978 Jan':'1987 Dec']
         print (countryYear)
+
         Sums = AsiaPacific.sum(axis=0)
         Sums = Sums.sort_values(ascending=False)
         print (Sums)
