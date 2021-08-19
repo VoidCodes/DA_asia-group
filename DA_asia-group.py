@@ -61,6 +61,10 @@ class Statistics:
                 months[j] += date_sum.iat[i]
         print (months)
         plt.plot(month_names,months)
+        plt.title("Overview of visitors in asia from 1978 - 1987")
+        plt.xlabel("Years")
+        plt.ylabel("Months")
+
         plt.show()
 
     def generate_bargraph(self):
